@@ -1,0 +1,99 @@
+.navigate{
+  align-content:center;
+  height: 10vh;
+  text-align-last: right;
+  background-color: black;
+}
+
+.wholePage{
+  background-size: cover;
+  height: 40vw;
+  background-image: url("assets\wallpaper.jpg");
+}
+
+.navMenu{
+  padding: 20px;
+  color: white;
+  text-decoration:unset;
+  border-bottom-left-radius: 20%;
+  border-top-right-radius: 20%; 
+
+}
+
+.navigate a.icon {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .navigate .navMenu {display: none;}
+  .navigate a.icon {
+    padding: 30px;
+    display: block;
+    color: white;
+    border: white;
+  }
+}
+
+@media screen {
+   .navMenu:hover {
+     background-color:white;
+     color: black;
+    }
+ 
+}
+
+.loginRegister{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
+  background-color: rgb(56, 56, 58);
+  margin: 10px auto 0px auto;
+  width: 50vw;
+  height: 20vh;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+}
+
+.left{
+  padding-bottom: 90vh;
+  background-color: rgb(20, 20, 20);
+  padding-left: 15%;
+  color: white;
+}
+
+.main{
+  display: flex;
+}
+
+.tableDiv{
+  background-color: rgb(248, 242, 242);
+  margin-left: 20vh;
+  margin-top: 5vh;
+  padding-right: 100vh;
+  flex: auto;
+  
+}
+
+.task-div{
+  background-color: yellow;
+  padding:5%;
+  margin: 5%;
+  text-align: center;
+
+}
+
+.status-button{
+  margin-left: 0px;
+  background-color: pink;
+  color: red;
+}
+
+.status-button:hover{
+  margin-left: 0px;
+  background-color: rgb(141, 11, 33);
+  color: red;
+}
+
+
+

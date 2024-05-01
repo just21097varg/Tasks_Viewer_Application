@@ -1,0 +1,13 @@
+# Type definition
+type User {
+  id: ID!
+  name: String
+  email: String
+  mobile: String
+}
+
+# Queries to retrive all users and by user id
+type Query {
+  allUsers: [User]!
+  getUserById(id: ID!): User
+}
