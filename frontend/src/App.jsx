@@ -5,7 +5,6 @@ import Login from './components/Login';
 import logo from './assets/Logo.png';
 import {Route,Routes,Link} from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import vid from './assets/WMS_v1.1.0_Inventory Move.mp4';
 import { FaBars,FaHome } from "react-icons/fa";
 import { BsInfoLg } from "react-icons/bs";
 function Logo(){
