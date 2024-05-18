@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 
 function DailyStats(props) {
   var value = props.value;
+  console.log(value);
   var user = props.user;
   const [strike, setStrike] = useState({display:'block'});
   const [buttonAction, setButtonAction] = useState({});
@@ -72,6 +73,8 @@ function DailyStats(props) {
   };
 
   const strikeout = (id) => (event) => {
+    console.log(id);
+    console.log(event.target.value);
     setStrike({ 'text-decoration': "line-through", color: 'red' });
     setButtonAction({ 'pointer-events': 'none' })
 
@@ -80,10 +83,13 @@ function DailyStats(props) {
 
   return (
     <div>
+      <input type='text' value={task} onChange={handleTask}></input>
+      <button onClick={taskSubmit}>ADD</button>
       
+          <button id='removeTasks' >REMOVE</button>
       <div className="tableDiv">
         {value != '' ?
-          <div className='tableStyle'>
+          <>
             {/* <tr key={"header"}>
               {Object.keys(value[0]).map((key) => (
                 <th>{key}</th>
@@ -100,14 +106,8 @@ function DailyStats(props) {
                 <div className="status-button" onClick={strikeout(item.taskID)}>Done</div>
               </div>
             ))}
-          </div> : <></>}
-          <Popup trigger=
-                {<button> ADD </button>}
-                display="flex">
-                <input type='text' value={task} onChange={handleTask}></input>
-                <button onClick={taskSubmit}>Submit</button>
-            </Popup>
-          <button id='removeTasks' >REMOVE</button>
+          </> : <></>}
+          
       </div>
     </div>
   );

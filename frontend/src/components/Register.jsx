@@ -86,7 +86,7 @@ function Register() {
     }
   };
   return (<div className="loginRegister">
-    {/* <Login>
+     <Login>
       <Render>
         {({ fields, buttons, blocks, $$index }) => {
           return (
@@ -136,9 +136,9 @@ function Register() {
       <Button keyname="reset" type="reset" onClick={handleReset}>
         Reset
       </Button>
-    </Login> */}
+    </Login> 
 
-    <ThemeProvider theme={defaultTheme}>
+    {/* <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -202,7 +202,7 @@ function Register() {
           </Box>
         </Box>
       </Container>
-    </ThemeProvider>
+    </ThemeProvider> */}
     </div> 
   );
 };

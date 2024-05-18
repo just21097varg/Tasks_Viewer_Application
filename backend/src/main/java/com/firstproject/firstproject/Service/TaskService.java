@@ -69,7 +69,7 @@ public class TaskService {
         }
 		
 		
-		sql = "INSERT INTO TASKS(TASK_ID,TASK_DESC,USER_ID,STATUS) VALUES (NEXTVAL('TASK_SEQ'),?,?,'IN PROCESS')";
+		sql = "INSERT INTO TASKS(TASK_ID,TASK_DESC,USER_ID,STATUS) VALUES (NEXTVAL('TASK_ID_SEQ'),?,?,'IN PROCESS')";
 		 
         statement = connection.prepareStatement(sql);
         statement.setString(1, taskDesc);

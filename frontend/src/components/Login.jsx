@@ -36,7 +36,7 @@ function Mylogin() {
       headers.append('Accept', 'application/json');
       headers.append('Access-Control-Allow-Origin', 'http://127.0.0.1:8082/login/loginVerify');
   
-      var jsonData = {
+      let jsonData = {
         "username": user,
         "password": pass
       };
@@ -48,11 +48,12 @@ function Mylogin() {
       }).then(response => response.json())
         .then(data => {  
            handleReset();
+           console.log("data",data);
           if (data.message === "Login failed") {
             setUserLogged("Invalid Login credentials!!");
           }
           else{
-            setUserLogged(user);
+            setUserLogged("  "+user);
             setDisplay({display: "flex"});
             setDisplayLogin({display: "none"});
             setDailyStats(data.data);
@@ -62,7 +63,7 @@ function Mylogin() {
     };
     return (
       <div className="main">
-        <div style={display} className="left">Hello {userLogged}</div>
+        <div style={display} className="left">Hello, <bold>{userLogged}</bold></div>
         <div style={display} className="viewStats"><DailyStats value={dailyStats} user={userLogged}></DailyStats></div>
         <div style={displayLogin} className="loginRegister">
           <Login>
@@ -90,8 +91,9 @@ function Mylogin() {
             <Login.Block keyname="title" tagName="span">
               Login
             </Login.Block>
-            <Login.Input keyname="username" placeholder="Please input Username" value={user} onChange={handleUsernameChange} />
-            <Login.Input keyname="password" placeholder="please enter password" value={pass} onChange={handlePasswordChange} type={defVal} onClick={handleTogglePassword} />
+            
+            <Login.Input keyname="username" placeholder="username" value={user} onChange={handleUsernameChange} />
+            <Login.Input keyname="password" placeholder="password" value={pass} onChange={handlePasswordChange} type={defVal} onClick={handleTogglePassword} />
             <Login.Button keyname="submit" type="submit" onClick={handleClick}>
               Submit
             </Login.Button>
