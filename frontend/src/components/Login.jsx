@@ -10,6 +10,7 @@ function Mylogin() {
     const [user, setUsername] = useState('');
     const [pass, setPassword] = useState('');
     const [userLogged, setUserLogged] = useState('');
+    const [otp, setOtp] = useState('');
     const handleUsernameChange = (event) => {
       setUsername(event.target.value);
     };
@@ -57,6 +58,8 @@ function Mylogin() {
             setDisplay({display: "flex"});
             setDisplayLogin({display: "none"});
             setDailyStats(data.data);
+            setOtp(data.otp);
+            console.log(data.otp);
           }
         })
         .catch(error => console.error(error));  
