@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.firstproject.firstproject.DAO.LoginDAO;
 import com.firstproject.firstproject.DAO.TaskDAO;
+import com.firstproject.firstproject.Service.EmailService;
 import com.firstproject.firstproject.Service.LoginService;
 import com.firstproject.firstproject.Service.TaskService;
 
@@ -34,15 +35,16 @@ public class LoginController {
     @ResponseBody
     public Map<String,Object> loginVerify(@RequestBody LoginDAO loginDAO) throws SQLException{
       
-        String result = loginService.verifyLogin(loginDAO.getUsername(),loginDAO.getPassword());
+        List<String> result = loginService.verifyLogin(loginDAO.getUsername(),loginDAO.getPassword());
         List<TaskDAO> list=new ArrayList<>();
-        if(result.equals("Success")){
+        if(result.get(0).equals("Success")){
         	list=taskService.getTasks(loginDAO.getUsername());
         }
         Map<String, Object> response = new HashMap<>();
         response.put("status", true);
-        response.put("message", result);
+        response.put("message", result.get(0));
         response.put("data", list);
+        response.put("otp",result.get(1));
         return response;
     }
 }
